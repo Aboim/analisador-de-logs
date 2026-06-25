@@ -1,0 +1,12 @@
+2026-06-15 14:30:01 [INFO] [AuthService] User 'lucas_silva' successfully authenticated.
+2026-06-15 14:30:05 [INFO] [OrderService] Initiating checkout for Cart #84920.
+2026-06-15 14:30:06 [DEBUG] [Database] Executing query: SELECT * FROM inventory WHERE item_id = 4042;
+2026-06-15 14:30:06 [INFO] [Database] Query executed successfully. Stock available: 3.
+2026-06-15 14:30:07 [WARN] [PaymentGateway] Connection timeout trying to reach primary API endpoint (api.payfast.com). Retrying...
+2026-06-15 14:30:12 [WARN] [PaymentGateway] Connection timeout on retry. Switching to backup endpoint (api-backup.payfast.com).
+2026-06-15 14:30:15 [ERROR] [PaymentGateway] Failed to process payment for Cart #84920. Remote server returned HTTP 503 Service Unavailable.
+2026-06-15 14:30:15 [ERROR] [OrderService] Checkout failed for Cart #84920. Transaction aborted.
+2026-06-15 14:30:15 [FATAL] [OrderService] Unexpected Exception: NullPointerException at com.store.orders.CheckoutManager.finalizeOrder(CheckoutManager.java:142)
+	at com.store.orders.CheckoutManager.process(CheckoutManager.java:58)
+	at com.store.api.OrderController.handleCheckout(OrderController.java:22)
+2026-06-15 14:30:16 [INFO] [SessionManager] User 'lucas_silva' session terminated due to unhandled error.
